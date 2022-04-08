@@ -3,7 +3,7 @@ fun main(){
      println(numbers)
      var nums = sumMixedArray(arrayOf(30.5F, 3, 40.5))
      println(nums)
-     var vowels = noVowelsArray(arrayOf('p','a','w', 'e', 'o', 'q' ))
+     var vowels = noVowelsArray(arrayOf('q','a','w', 'e', 'o', 's' ))
      println(vowels)
 }
 //Write a function that takes in an array of integers and returns the product of
@@ -20,7 +20,9 @@ fun multiply(nums:Array<Int>):Int{
 fun sumMixedArray(number: Array<Any>):Double{
      var sum = 0.0
      number.forEach { number ->
-          sum+=number.toString().toDouble()
+          if (number is Double || number is Float){
+            sum += number.toString().toDouble()
+          }
      }
      return sum
 }
